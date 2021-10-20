@@ -57,15 +57,66 @@ function gridCreate(cellsNumber){
     }
     cella.innerHTML = [i +1];
     
-    contGrid.append(cella)
+    contGrid.append(cella);
 
-    cella.addEventListener("click", backgroundCella)
+    cella.addEventListener("click", backgroundCella);
 
+  } 
+ 
+
+}
+ 
+function backgroundCella(){
+  this.classList.toggle("background-cella");
+}
+
+
+
+//1- Generare 16 numeri casuali(bombe) Fatto
+  //1_2 - Tenedo conto delle varie difficoltà(1, 2, 3)
+  //1_2 - I numeri non devono essere replicati
+//2 - Al click: se il numero è presente nella lista dei numeri generati
+  //2_2 - abbiamo calpestato una bomba
+    //2_3 - la cella si colora di rosso e la partita termina
+     //2_4 - altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
+
+//creo un ciclo dove vado a specificare i numeri in base alla difficoltà
+for (x = 0; x < 16; x++){
+  if(difficolta.value === "1"){
+    generaNumeriRandom(1, 100)
+    console.log(generaNumeriRandom(1, 100))
+  }
+  if(difficolta.value === "2"){
+    generaNumeriRandom(1, 81)
+    console.log(generaNumeriRandom(1, 81))
   }
 }
 
 
-function backgroundCella(){
-  this.classList.toggle("background-cella")
-}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  //Genera i numeri random da 1 a 16
+  function generaNumeriRandom(minNumber, maxNumber) {
+    const numRandom = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
+    return numRandom;
+  }
+  console.log("numeri Random", generaNumeriRandom)

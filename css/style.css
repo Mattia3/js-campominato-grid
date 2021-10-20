@@ -26,10 +26,11 @@ main{
  justify-content: center;
  display: flex;
  align-items: center;
+ cursor: pointer;
 }
 
 .background-cella{
-  background-color: blue;
+  background-color: #0800ff52;
 }
 
 
