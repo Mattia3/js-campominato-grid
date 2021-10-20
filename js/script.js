@@ -60,8 +60,23 @@ function gridCreate(cellsNumber){
     contGrid.append(cella);
 
     cella.addEventListener("click", backgroundCella);
-
   } 
+
+//creo un ciclo dove vado a specificare i numeri in base alla difficoltà
+  for (x = 0; x < 16; x++){
+    if(difficolta.value === "1"){
+      generaNumeriRandom(1, 100)
+      console.log(generaNumeriRandom(1, 100))
+    }
+    if(difficolta.value === "2"){
+      generaNumeriRandom(1, 81)
+      console.log(generaNumeriRandom(1, 81))
+    }
+    if(difficolta.value === "3"){
+      generaNumeriRandom(1, 49)
+      console.log(generaNumeriRandom(1, 49))
+    }
+  }
  
 
 }
@@ -80,43 +95,10 @@ function backgroundCella(){
     //2_3 - la cella si colora di rosso e la partita termina
      //2_4 - altrimenti la cella cliccata si colora di azzurro e l’utente può continuare a cliccare sulle altre celle.
 
-//creo un ciclo dove vado a specificare i numeri in base alla difficoltà
-for (x = 0; x < 16; x++){
-  if(difficolta.value === "1"){
-    generaNumeriRandom(1, 100)
-    console.log(generaNumeriRandom(1, 100))
-  }
-  if(difficolta.value === "2"){
-    generaNumeriRandom(1, 81)
-    console.log(generaNumeriRandom(1, 81))
-  }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  //Genera i numeri random da 1 a 16
+ //Genera i numeri random da 1 a 16
   function generaNumeriRandom(minNumber, maxNumber) {
     const numRandom = Math.floor(Math.random() * (maxNumber - minNumber + 1) + minNumber);
     return numRandom;
   }
-  console.log("numeri Random", generaNumeriRandom)
+ 
